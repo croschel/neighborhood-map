@@ -1,10 +1,13 @@
 import './App.css';
 import React, { Component } from 'react';
+import Header from "./components/Header";
+import Content from "./components/Content";
+
 
 class App extends Component {
   initMap(){
       let map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
+      center: {lat: -22.922936, lng: -47.043836},
       zoom: 8
     });
   }
@@ -29,8 +32,9 @@ class App extends Component {
   render(){
     this.loadScript();
     return (
-      <div className="App" id="map">
-     
+      <div className="App">
+        <Header></Header>
+        <Content></Content>
       </div>
     );
   }
