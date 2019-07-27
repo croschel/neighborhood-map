@@ -1,14 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Map from "./Map";
 import List from "./List";
+import * as LocationsAPI from "../api/Locations";
 
 
-class Content extends Component{
+class Content extends React.Component{
+    state = {
+        locations: []
+    };
+    componentDidMount(){
+    console.log("DATA");
+       LocationsAPI.getLocations().then(resp => this.setState({locations:resp}));
+    }
     render(){
+        console.log("RESPONSE")
         return(
-            <div>
-                <List></List>
-                <Map></Map>
+            <div className="content">
+                <List locations={this.state.locations}></List>
+                <Map locations={this.state.locations}></Map>
             </div>
         )
     }

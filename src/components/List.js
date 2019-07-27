@@ -3,12 +3,22 @@ import Map from "./Map";
 
 class List extends Component{
     render(){
-        //Location List
+        const locations = this.props.locations;
         return(
             <div id="list">
-                <h2>List</h2>
+                <h2>Locations</h2>
+                <input type="text"/>
+                <ol>
+                    {locations.map(loc => (
+                        <li>
+                            <div>
+                                <h2>{loc.venue.name}</h2>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
             </div>
-        )
+        );
     }
 }
 
