@@ -7,9 +7,10 @@ import Content from "./components/Content";
 class App extends Component {
   initMap(){
       let map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: -22.922936, lng: -47.043836},
-      zoom: 8
+      center: {lat: -22.91, lng: -47.06},
+      zoom: 12
     });
+    window.mapObject = map;
   }
 
   loadScript(){

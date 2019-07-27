@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class Header extends Component{
     render(){
         return(
-            <h1>Neighborhood Map</h1>
+            <header>
+<               h1>Neighborhood Map</h1>
+            </header>
+            
         )
     }
 }
