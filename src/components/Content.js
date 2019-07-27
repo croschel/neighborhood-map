@@ -18,7 +18,7 @@ class Content extends React.Component{
 
     handleClick = location => {
         for(let i = 0; i < window.markers.length; i++){
-            if(location.venue.id === window.markers[i].title){
+            if(location.venue.id === window.markers[i].title){ 
                 let content = this.contentLocation(location);
                 window.infowindow.setContent(content);
                 window.infowindow.open(window.mapObject, window.markers[i]);
@@ -41,14 +41,12 @@ class Content extends React.Component{
             this.setState({locations: this.state.allLocations});
         }
     }
-
+    
     filterLocations = (query,locations) => {
         return locations.filter(location => location.venue.name.toLowerCase().includes(query.toLowerCase()));
     }
 
     render(){
-
-
         return(
             <div className="content">
                 <List locations={this.state.locations} infoContent={this.handleClick} queryString={this.state.query} handleChange={this.handleTextChange}>

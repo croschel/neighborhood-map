@@ -36,7 +36,7 @@ class Map extends Component{
         this.removeMarkers()
         this.addMarkers(this.props.locations);
         return(
-            <div id="map"></div>
+            <div role="application" aria-label="Map os neighboor hood" id="map"></div>
         )
     }
 }
